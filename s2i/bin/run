@@ -3,4 +3,4 @@
 set -e
 
 echo "---> Starting Spring Boot application"
-java -jar `find target -name *.jar`
+java -Djava.security.egd=file:/dev/./urandom -XX:MaxHeapFreeRatio=70 ${JAVA_OPTS} -jar `find target -name *.jar`
